@@ -4,8 +4,8 @@ from transformers import BertTokenizer, BertForSequenceClassification
 from flask import Flask, jsonify, request
 
 # Вопрос в каком виде импортировать модель через метод from_pretrained()
-tokenizer = BertTokenizer.from_pretrained('/content/drive/MyDrive/hw/toLoad/model_spam')
-model =BertForSequenceClassification.from_pretrained('/content/drive/MyDrive/hw/toLoad/model_spam')
+tokenizer = BertTokenizer.from_pretrained('model_spam')
+model =BertForSequenceClassification.from_pretrained('model_spam')
 
 
 app = Flask(__name__)

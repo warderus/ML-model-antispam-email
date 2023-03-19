@@ -7,6 +7,6 @@ COPY requirements.txt requirements.txt
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-COPY ["model", "app.py", "./"] .
+COPY ["model_spam", "app.py", "./"] .
 
 ENTRYPOINT [ "gunicorn", "--bind=0.0.0.0:5000", "app:app" ]

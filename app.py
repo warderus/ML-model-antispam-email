@@ -1,11 +1,11 @@
-import catboost as cb
 import pandas as pd
 
+from transformers import BertTokenizer, BertForSequenceClassification
 from flask import Flask, jsonify, request
 
-# Вопрос в каком виде импортировать модель
-model = cb.CatBoostClassifier()
-model.load_model("model.cbm")
+# Вопрос в каком виде импортировать модель через метод from_pretrained()
+tokenizer = BertTokenizer.from_pretrained('/content/drive/MyDrive/hw/toLoad/model_spam')
+model =BertForSequenceClassification.from_pretrained('/content/drive/MyDrive/hw/toLoad/model_spam')
 
 
 app = Flask(__name__)

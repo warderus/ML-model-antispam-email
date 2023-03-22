@@ -1,11 +1,15 @@
 import pandas as pd
 
-from transformers import BertTokenizer, BertForSequenceClassification
+from transformers import BertForSequenceClassification
 from flask import Flask, jsonify, request
+import time, os
+import tensorflow
+from transformers import get_linear_schedule_with_warmup
+import torch
 
 
-tokenizer = BertTokenizer.from_pretrained('model_spam')
-model =BertForSequenceClassification.from_pretrained('model_spam')
+
+model = BertForSequenceClassification.from_pretrained('model_spam')
 
 
 app = Flask(__name__)
